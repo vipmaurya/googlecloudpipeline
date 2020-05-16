@@ -1,0 +1,13 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['network', 'create', 'gcloud_example_pipeline']
+- name: 'docker/compose:1.24.0'
+  args: ['up','-d']
+  env:
+  - 'NODE_ENV=development'
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['tag', 'workspace_users-service:latest', 'gcr.io/$PROJECT_ID/users-service:$COMMIT_SHA']
+images: ['gcr.io/$PROJECT_ID/users-service:$COMMIT_SHA']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['tag', 'workspace_movies-service:latest', 'gcr.io/$PROJECT_ID/movies-service:$COMMIT_SHA']
+images: ['gcr.io/$PROJECT_ID/movies-service:$COMMIT_SHA']

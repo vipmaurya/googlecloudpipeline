@@ -1,0 +1,13 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['network', 'create', 'gcloud_example_pipeline']
+- name: 'docker/compose:1.24.0'
+  args: ['up','-d']
+  env:
+  - 'NODE_ENV=$_NODE_ENV'
+  - 'USERS_SERVICE_URL=$_USERS_SERVICE_URL'
+  - 'MOVIES_SERVICE_URL=$_MOVIES_SERVICE_URL'
+  - 'OMDB_API_KEY=$_OMDB_API_KEY'
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['tag', 'workspace_web-service:latest', 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
+images: ['gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
