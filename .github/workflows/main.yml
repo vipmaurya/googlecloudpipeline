@@ -28,4 +28,9 @@ jobs:
 
     - name: Build containers 
       run: docker-compose up -d
+
+    - name: Run tests 
+      run: |
+        cd ./wdio-omdb-automation
+        docker-compose run --rm wdio conf/chrome.docker.js
       
