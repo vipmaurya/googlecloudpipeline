@@ -22,7 +22,6 @@ services:
     environment:
       - WAIT_FOR_HOSTS=
           chromedriver:4444
-          geckodriver:4444
       - WINDOWS_HOST
       - ANDROID_SERIAL
       - PLATFORM_VERSION
