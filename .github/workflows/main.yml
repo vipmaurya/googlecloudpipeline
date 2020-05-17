@@ -1,0 +1,25 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: GCP Pipeline
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+env:
+  NODE_ENV: development
+  USERS_SERVICE_URL: http://users-service:3000
+  MOVIES_SERVICE_URL: http://movies-service:3001
+  OMDB_API_KEY: a69b8c8f
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Deploy the 3 containers
+    - run: docker-compose up -d
