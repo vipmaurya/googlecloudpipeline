@@ -81,43 +81,6 @@ services:
       - movies-service
       - users-service
 
-  chromedriver:
-    image: blueimp/chromedriver
-    init: true
-    tmpfs: /tmp
-    environment:
-      - DISABLE_X11=false
-      - ENABLE_VNC=true
-      - EXPOSE_X11=true
-    volumes:
-      - ./wdio-omdb-automation/assets:/home/webdriver/assets:ro
-    depends_on:
-      - web-service
-    ports:
-      - 127.0.0.1:5900:5900
-
-  wdio:
-    build: ./wdio-omdb-automation
-    init: true
-    read_only: true
-    tmpfs:
-      - /tmp
-      - /home/wdio/.android
-    environment:
-      - WAIT_FOR_HOSTS=
-          chromedriver:4444
-      - WINDOWS_HOST
-      - ANDROID_SERIAL
-      - PLATFORM_VERSION
-      - DEVICE_NAME
-      - ORIENTATION
-      - MACOS_ASSETS_DIR=$PWD/assets/
-      - WINDOWS_ASSETS_DIR
-    volumes:
-      - ./wdio-omdb-automation:/opt:ro
-    depends_on:
-      - chromedriver
-
 networks:
   default:
       external:

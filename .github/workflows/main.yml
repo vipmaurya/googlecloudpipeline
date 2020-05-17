@@ -32,5 +32,5 @@ jobs:
     - name: Run tests 
       run: |
         cd ./wdio-omdb-automation
-        npm run test-chrome-local
+        docker-compose run --rm wdio conf/chrome.docker.js
       
