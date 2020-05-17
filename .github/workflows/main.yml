@@ -20,6 +20,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      
     - uses: actions/checkout@v2
     - name: Deploy the 3 containers
     - run: docker-compose up -d
