@@ -23,5 +23,4 @@ jobs:
     - name: Checkout
     uses: actions/checkout@v2
 
-    # Configure docker to use the gcloud command-line tool as a credential helper
     - run: docker-compose up -d
