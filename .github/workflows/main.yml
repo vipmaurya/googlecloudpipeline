@@ -18,9 +18,11 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      
-    - uses: actions/checkout@v2
-    - name: Deploy the 3 containers
-    - run: docker-compose up -d
+
+    - name: Checkout
+    uses: actions/checkout@v2
+
+    # Configure docker to use the gcloud command-line tool as a credential helper
+    - run: |
+        docker-compose up -d
