@@ -19,5 +19,3 @@ apps/
 *.log
 chromeDriver
 allure-results/
-
-package-lock.json

@@ -1,4 +1,5 @@
 *
 !bin/wait-for-hosts.sh
 !package.json
+!package-lock.json
 !ChromeDriver.txt
