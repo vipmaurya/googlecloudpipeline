@@ -30,7 +30,7 @@ services:
       - MACOS_ASSETS_DIR=$PWD/assets/
       - WINDOWS_ASSETS_DIR
     volumes:
-      - .:/opt:ro
+      - .:/opt
     depends_on:
       - chromedriver
 
