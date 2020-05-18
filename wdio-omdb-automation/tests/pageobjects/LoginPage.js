@@ -1,5 +1,4 @@
 import Page from './page'
-import MoviesPage from './MoviesPage'
 
 class LoginPage extends Page {
     /**

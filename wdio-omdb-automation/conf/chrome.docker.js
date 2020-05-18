@@ -43,7 +43,8 @@ exports.config = {
   baseUrl: 'http://web-service:3006',
 
   beforeSession: (config, capabilities, specs) => {
-    require('@babel/register');
-    require('@babel/preset-env');
+    require("@babel/register")({
+      presets: ["@babel/preset-env"]
+    });
   },
 }
