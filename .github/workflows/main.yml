@@ -11,8 +11,8 @@ on:
 
 env:
   NODE_ENV: development
-  USERS_SERVICE_URL: http://localhost:3000
-  MOVIES_SERVICE_URL: http://localhost:3001
+  USERS_SERVICE_URL: http://users-service:3000
+  MOVIES_SERVICE_URL: http://movies-service:3001
   OMDB_API_KEY: a69b8c8f
 
 jobs:

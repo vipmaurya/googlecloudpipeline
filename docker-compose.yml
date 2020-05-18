@@ -4,7 +4,9 @@ services:
 
   users-db:
     container_name: users-db
-    build: ./omdb-app-backend/services/users/src/db
+    build: 
+      context: ./omdb-app-backend/services/users/src/db
+      network: gcloud_example_pipeline
     ports:
       - '5433:5432' # expose ports - HOST:CONTAINER
     environment:
@@ -15,7 +17,9 @@ services:
 
   movies-db:
     container_name: movies-db
-    build: ./omdb-app-backend/services/movies/src/db
+    build: 
+      context: ./omdb-app-backend/services/movies/src/db
+      network: gcloud_example_pipeline
     ports:
       - '5434:5432' # expose ports - HOST:CONTAINER
     environment:
@@ -26,7 +30,9 @@ services:
 
   users-service:
     container_name: users-service
-    build: ./omdb-app-backend/services/users/
+    build: 
+      context: ./omdb-app-backend/services/users/
+      network: gcloud_example_pipeline
     volumes:
       - './omdb-app-backend/services/users:/usr/src/app'
       - './omdb-app-backend/services/users/package.json:/usr/src/package.json'
@@ -44,7 +50,9 @@ services:
 
   movies-service:
     container_name: movies-service
-    build: ./omdb-app-backend/services/movies/
+    build: 
+      context: ./omdb-app-backend/services/movies/
+      network: gcloud_example_pipeline
     volumes:
       - './omdb-app-backend/services/movies:/usr/src/app'
       - './omdb-app-backend/services/movies/package.json:/usr/src/package.json'

@@ -1,7 +1,5 @@
-# PoplyXP CMS UI Automation Framework with WebDriveriO
+# Sample Automation Framework with WDIO
 
-This repository contains the automation testing framework developed for testing the CMS implementation
-for PopflyXP.
 This example used `wdio` test runner. This example is configured to run in the AWS project via docker-compose, and can be
 also run in local mode, but it doesn't need the local Selenium standalone server.
 

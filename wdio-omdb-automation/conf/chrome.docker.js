@@ -11,7 +11,7 @@ exports.config = {
       browserName: 'chrome',
       'goog:chromeOptions': {
         // Disable headless mode if screen recordings are enabled:
-        args: ['--window-size=1440,900','--headless']
+        args: ['--window-size=1440,900']
       }
     }
   ],
