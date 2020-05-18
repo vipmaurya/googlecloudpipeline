@@ -5,6 +5,5 @@ module.exports = {
                 node: 8
             }
         } ]
-    ],
-    cwd : __dirname
+    ]
 };

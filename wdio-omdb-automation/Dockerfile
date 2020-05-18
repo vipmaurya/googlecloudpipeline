@@ -16,7 +16,7 @@ RUN apk --no-cache add \
     /root/.npm 
 
 WORKDIR /usr/lib/wdio
-COPY package.json ./
+COPY package.json package-lock.json ./
 RUN npm install --production \
   # Clean up obsolete files:
   && rm -rf \
