@@ -32,6 +32,7 @@
   "devDependencies": {
     "@wdio/allure-reporter": "^5.13.2",
     "@wdio/appium-service": "^5.12.1",
+    "@babel/preset-env": "^7.9.6",
     "babel-eslint": "^10.0.2",
     "chromedriver": "^81.0.0",
     "eslint": "^5.16.0",
