@@ -1,7 +1,7 @@
 {
   "name": "webdriverio-examples",
   "version": "1.0.0",
-  "description": "This is Automation Testing project for PopflyXP CMS implementation",
+  "description": "This is Automation Testing project",
   "main": "index.js",
   "private": true,
   "scripts": {
