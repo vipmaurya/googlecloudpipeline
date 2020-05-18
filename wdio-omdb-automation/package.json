@@ -22,12 +22,12 @@
     "wdio-screen-commands": "2",
     "webdriverio": "^5.12.4",
     "wdio-chromedriver-service": "^5.0.2",
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
+    "@babel/cli": "^7.9.6",
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
     "@babel/register": "^7.9.0",
-    "@babel/traverse": "^7.5.5",
-    "@babel/types": "^7.5.5"
+    "@babel/traverse": "^7.9.6",
+    "@babel/types": "^7.9.6"
   },
   "devDependencies": {
     "@wdio/allure-reporter": "^5.13.2",
