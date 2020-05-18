@@ -31,7 +31,7 @@ describe('First Test Group', () => {
     LoginPage.username.setValue('jorge.perez'+usrUnique);
     LoginPage.password.setValue('Pass1234');
     LoginPage.signup();
-    browser.pause(3000);
+    browser.pause(300000);
     const successMsg = MoviesPage.getSuccessMsg();
     console.log(successMsg);
     expect(successMsg).toContain("You successfully registered! Welcome!");
