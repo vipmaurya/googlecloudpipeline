@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM alpine:3.11
 
 RUN echo '@edgetesting http://dl-cdn.alpinelinux.org/alpine/edge/testing' \
   >> /etc/apk/repositories
@@ -23,7 +23,7 @@ RUN npm install \
     /tmp/* \
     /root/.npm
 # Set NODE_PATH to be able to require installed packages:
-RUN npm install --save-dev @babel/preset-env
+RUN npm install -g @babel/preset-env
 ENV NODE_PATH=/usr/lib/wdio/node_modules
 # Extend path to be able to run installed binaries:
 ENV PATH=$PATH:/usr/lib/wdio/node_modules/.bin

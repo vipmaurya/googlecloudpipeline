@@ -44,9 +44,6 @@ exports.config = {
 
   beforeSession: (config, capabilities, specs) => {
     require("@babel/preset-env");
-    require("@babel/register")({
-      presets: ["@babel/preset-env"],
-      cache: false
-    });
-  },
+    require("@babel/register");
+  }
 }
