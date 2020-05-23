@@ -39,11 +39,15 @@ exports.config = {
     startDelay: 500,
     stopDelay: 500
   },
+  query: {
+    cwd: __dirname,
+    presets: ['@babel/preset-env']
+  },
   //assetsDir: '/home/webdriver/assets/',
   baseUrl: 'http://web-service:3006',
 
   beforeSession: (config, capabilities, specs) => {
-    require("@babel/preset-env");
     require("@babel/register");
+    
   }
 }
