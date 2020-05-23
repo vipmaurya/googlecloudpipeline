@@ -26,9 +26,6 @@ jobs:
     - name: Create network 
       run: docker network create gcloud_example_pipeline
 
-    - name: Build containers 
-      run: docker-compose up -d
-
     - name: Run tests 
       run: |
         cd ./wdio-omdb-automation
