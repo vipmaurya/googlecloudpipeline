@@ -35,7 +35,6 @@ jobs:
     - name: Network Inspect 
       run: docker network inspect gcloud_example_pipeline
 
-  test:
     - name: Run tests 
       run: |
         cd ./wdio-omdb-automation
