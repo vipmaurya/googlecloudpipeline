@@ -44,7 +44,8 @@ services:
       - NODE_ENV=${NODE_ENV}
       - TOKEN_SECRET=changeme
     depends_on:
-      - users-db
+      users-db:
+        condition: service_healthy
     links:
       - users-db
 
@@ -64,8 +65,10 @@ services:
       - NODE_ENV=${NODE_ENV}
       - TOKEN_SECRET=changeme
     depends_on:
-      - movies-db
-      - users-service
+      movies-db:
+        condition: service_healthy
+      users-service:
+        condition: service_started
     links:
       - movies-db
       - users-service
