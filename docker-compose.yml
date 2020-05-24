@@ -13,7 +13,10 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     healthcheck:
-      test: exit 0
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   movies-db:
     container_name: movies-db
@@ -26,7 +29,10 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     healthcheck:
-      test: exit 0
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   users-service:
     container_name: users-service
@@ -44,8 +50,7 @@ services:
       - NODE_ENV=${NODE_ENV}
       - TOKEN_SECRET=changeme
     depends_on:
-      users-db:
-        condition: service_healthy
+      - users-db
     links:
       - users-db
 
@@ -65,10 +70,8 @@ services:
       - NODE_ENV=${NODE_ENV}
       - TOKEN_SECRET=changeme
     depends_on:
-      movies-db:
-        condition: service_healthy
-      users-service:
-        condition: service_started
+      - movies-db
+      - users-service
     links:
       - movies-db
       - users-service
