@@ -10,6 +10,7 @@ config.specs = [
 config.port= 9515;
 config.services = ['chromedriver'];
 config.baseUrl = 'http://localhost:3007'
+
 //services: ['chromedriver','geckodriver'],
 // ============
 // Capabilities

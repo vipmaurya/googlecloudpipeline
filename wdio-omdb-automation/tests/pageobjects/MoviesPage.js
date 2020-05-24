@@ -28,7 +28,7 @@ class MoviesPage extends Page {
     }
 
     getSuccessMsg(){
-        this.successRegister.waitForDisplayed({ timeout: 3000 });
+        this.successRegister.waitForDisplayed({ timeout: 10000 });
         return this.successRegister.getText();
     }
 }
