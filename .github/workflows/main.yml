@@ -28,6 +28,9 @@ jobs:
 
     - name: Build containers 
       run: docker-compose up -d
+    
+    - name: Network Inspect 
+      run: docker network inspect gcloud_example_pipeline
 
     - name: Run tests 
       run: |
