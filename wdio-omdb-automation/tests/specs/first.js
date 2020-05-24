@@ -1,5 +1,4 @@
 const assert = require('assert');
-import "@babel/preset-env"
 import LoginPage from '../pageobjects/LoginPage';
 import MoviesPage from '../pageobjects/MoviesPage';
 
