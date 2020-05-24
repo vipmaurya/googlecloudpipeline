@@ -23,6 +23,7 @@ exports.config = {
       // Updated the timeout to 30 seconds due to possible longer appium calls
       // When using XPATH
       defaultTimeoutInterval: 90000,
+      helpers: [require.resolve('@babel/register')],
   },
   //framework: 'mocha',
   //mochaOpts: {
@@ -39,15 +40,10 @@ exports.config = {
     startDelay: 500,
     stopDelay: 500
   },
-  query: {
-    cwd: __dirname,
-    presets: ['@babel/preset-env']
-  },
   //assetsDir: '/home/webdriver/assets/',
   baseUrl: 'http://web-service:3006',
 
-  beforeSession: (config, capabilities, specs) => {
-    require("@babel/register");
-    
-  }
+  before: () => {
+    require('@babel/register');	  
+	},
 }
