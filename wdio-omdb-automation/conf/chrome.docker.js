@@ -43,7 +43,7 @@ exports.config = {
   //assetsDir: '/home/webdriver/assets/',
   baseUrl: 'http://web-service:3006',
   query: {
-       cwd: '/usr/lib',
+       cwd: __dirname,
        presets: ['@babel/preset-env']
   },
 
