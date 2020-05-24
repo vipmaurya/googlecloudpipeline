@@ -39,3 +39,6 @@ jobs:
       run: |
         cd ./wdio-omdb-automation
         docker-compose run --rm wdio conf/chrome.docker.js
+
+    - name: Network Inspect 2
+      run: docker ps -a
