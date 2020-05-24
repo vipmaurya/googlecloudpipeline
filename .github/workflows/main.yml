@@ -33,7 +33,7 @@ jobs:
       run: docker-compose up -d
     
     - name: Network Inspect 
-      run: docker images ps -a
+      run: docker ps -a
 
     - name: Run tests 
       run: |
