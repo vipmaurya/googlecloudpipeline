@@ -1,6 +1,6 @@
 module.exports = {
     presets: [
-        [ '@babel/preset-env', {
+        [ '/usr/lib/wdio/node_modules/@babel/preset-env', {
             targets: {
                 node: 12,
             },
