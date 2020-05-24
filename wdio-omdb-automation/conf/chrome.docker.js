@@ -42,6 +42,10 @@ exports.config = {
   },
   //assetsDir: '/home/webdriver/assets/',
   baseUrl: 'http://web-service:3006',
+  query: {
+       cwd: '/usr/lib',
+       presets: ['@babel/preset-env']
+  },
 
   before: () => {
     require('@babel/register');	  
