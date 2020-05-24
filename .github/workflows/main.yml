@@ -33,7 +33,7 @@ jobs:
       run: docker-compose up -d
     
     - name: Network Inspect 
-      run: docker network inspect gcloud_example_pipeline
+      run: docker images ps -a
 
     - name: Run tests 
       run: |
