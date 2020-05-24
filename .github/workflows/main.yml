@@ -35,10 +35,15 @@ jobs:
     - name: Network Inspect 
       run: docker ps -a
 
+    - name: Sleep for 30 seconds
+      uses: jakejarvis/wait-action@master
+      with:
+        time: '30s'
+
+    - name: Network Inspect 2
+      run: docker ps -a
+
     - name: Run tests 
       run: |
         cd ./wdio-omdb-automation
         docker-compose run --rm wdio conf/chrome.docker.js
-
-    - name: Network Inspect 2
-      run: docker ps -a
