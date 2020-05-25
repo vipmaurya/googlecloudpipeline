@@ -43,19 +43,19 @@ jobs:
     - name: Authenticate into Google Cloud Platform
       uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
       with:
-          service_account_email: ${{ secrets.GCLOUD_EMAIL }}
-          service_account_key: ${{ secrets.GCLOUD_KEY }}
+        service_account_email: ${{ secrets.GCLOUD_EMAIL }}
+        service_account_key: ${{ secrets.GCLOUD_KEY }}
 
     - name: Configure Docker to use Google Cloud Platform
       run: "gcloud auth configure-docker --quiet"
     
     - name: Tag Images
       run: |
-        docker tag googlecloudpipeline_web-service:latest gcr.io/${{ secrets.GCP_PROJECT_ID }}/web-service:$COMMIT_SHA
-        docker tag googlecloudpipeline_users-service:latest gcr.io/${{ secrets.GCP_PROJECT_ID }}/users-service:$COMMIT_SHA
-        docker tag googlecloudpipeline_movies-service:latest gcr.io/${{ secrets.GCP_PROJECT_ID }}/movies-service:$COMMIT_SHA
-        docker tag googlecloudpipeline_users-db:latest gcr.io/${{ secrets.GCP_PROJECT_ID }}/users-db:$COMMIT_SHA
-        docker tag googlecloudpipeline_movies-db:latest gcr.io/${{ secrets.GCP_PROJECT_ID }}/movies-db:$COMMIT_SHA
+        docker tag googlecloudpipeline_web-service:latest "gcr.io/${{ secrets.GCP_PROJECT_ID }}/web-service:$COMMIT_SHA"
+        docker tag googlecloudpipeline_users-service:latest "gcr.io/${{ secrets.GCP_PROJECT_ID }}/users-service:$COMMIT_SHA"
+        docker tag googlecloudpipeline_movies-service:latest "gcr.io/${{ secrets.GCP_PROJECT_ID }}/movies-service:$COMMIT_SHA"
+        docker tag googlecloudpipeline_users-db:latest "gcr.io/${{ secrets.GCP_PROJECT_ID }}/users-db:$COMMIT_SHA"
+        docker tag googlecloudpipeline_movies-db:latest "gcr.io/${{ secrets.GCP_PROJECT_ID }}/movies-db:$COMMIT_SHA"
 
 
     # Push the Docker image to Google Container Registry
