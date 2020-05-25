@@ -62,8 +62,8 @@ jobs:
     # Push the Docker image to Google Container Registry
     - name: Publish Images to GCP Container Registry
       run: |
-        docker push gcr.io/$PROJECT_ID/web-service:$GITHUB_SHA"
-        docker push gcr.io/$PROJECT_ID/users-service:$GITHUB_SHA"
-        docker push gcr.io/$PROJECT_ID/movies-service:$GITHUB_SHA"
-        docker push gcr.io/$PROJECT_ID/users-db:$GITHUB_SHA"
-        docker push gcr.io/$PROJECT_ID/movies-db:$GITHUB_SHA"
+        docker push gcr.io/$PROJECT_ID/web-service:$GITHUB_SHA
+        docker push gcr.io/$PROJECT_ID/users-service:$GITHUB_SHA
+        docker push gcr.io/$PROJECT_ID/movies-service:$GITHUB_SHA
+        docker push gcr.io/$PROJECT_ID/users-db:$GITHUB_SHA
+        docker push gcr.io/$PROJECT_ID/movies-db:$GITHUB_SHA
