@@ -14,7 +14,7 @@ env:
   USERS_SERVICE_URL: http://users-service:3000
   MOVIES_SERVICE_URL: http://movies-service:3000
   OMDB_API_KEY: a69b8c8f
-  PROJECT_ID: $PROJECT_ID
+  PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
 
 jobs:
   build:
