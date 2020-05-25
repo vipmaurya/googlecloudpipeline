@@ -14,6 +14,7 @@ env:
   USERS_SERVICE_URL: http://users-service:3000
   MOVIES_SERVICE_URL: http://movies-service:3000
   OMDB_API_KEY: a69b8c8f
+  PROJECT_ID: $PROJECT_ID
 
 jobs:
   build:
@@ -51,18 +52,18 @@ jobs:
     
     - name: Tag Images
       run: |
-        docker tag googlecloudpipeline_web-service:latest "gcr.io/${{ secrets.GCP_PROJECT_ID }}/web-service:${GITHUB_SHA}""
-        docker tag googlecloudpipeline_users-service:latest "gcr.io/${{ secrets.GCP_PROJECT_ID }}/users-service:${GITHUB_SHA}""
-        docker tag googlecloudpipeline_movies-service:latest "gcr.io/${{ secrets.GCP_PROJECT_ID }}/movies-service:${GITHUB_SHA}""
-        docker tag googlecloudpipeline_users-db:latest "gcr.io/${{ secrets.GCP_PROJECT_ID }}/users-db:${GITHUB_SHA}"
-        docker tag googlecloudpipeline_movies-db:latest "gcr.io/${{ secrets.GCP_PROJECT_ID }}/movies-db:${GITHUB_SHA}""
+        docker tag googlecloudpipeline_web-service:latest "gcr.io/$PROJECT_ID/web-service:$GITHUB_SHA"
+        docker tag googlecloudpipeline_users-service:latest "gcr.io/$PROJECT_ID/users-service:$GITHUB_SHA"
+        docker tag googlecloudpipeline_movies-service:latest "gcr.io/$PROJECT_ID/movies-service:$GITHUB_SHA"
+        docker tag googlecloudpipeline_users-db:latest "gcr.io/$PROJECT_ID/users-db:$GITHUB_SHA"
+        docker tag googlecloudpipeline_movies-db:latest "gcr.io/$PROJECT_ID/movies-db:$GITHUB_SHA"
 
 
     # Push the Docker image to Google Container Registry
     - name: Publish Images to GCP Container Registry
       run: |
-        docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/web-service:${GITHUB_SHA}"
-        docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/users-service:${GITHUB_SHA}"
-        docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/movies-service:${GITHUB_SHA}"
-        docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/users-db:${GITHUB_SHA}"
-        docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/movies-db:${GITHUB_SHA}"
+        docker push gcr.io/$PROJECT_ID/web-service:$GITHUB_SHA"
+        docker push gcr.io/$PROJECT_ID/users-service:$GITHUB_SHA"
+        docker push gcr.io/$PROJECT_ID/movies-service:$GITHUB_SHA"
+        docker push gcr.io/$PROJECT_ID/users-db:$GITHUB_SHA"
+        docker push gcr.io/$PROJECT_ID/movies-db:$GITHUB_SHA"
