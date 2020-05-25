@@ -36,9 +36,7 @@ jobs:
       run: docker ps -a
 
     - name: Sleep for 30 seconds
-      uses: jakejarvis/wait-action@master
-      with:
-        time: '30s'
+      run: docker restart $(docker ps -q)
 
     - name: Network Inspect 2
       run: docker ps -a
