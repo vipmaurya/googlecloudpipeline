@@ -32,3 +32,11 @@ jobs:
 
     - name: Run containers 
       run: docker-compose up -d
+
+    - name: Docker refresh containers
+      run: docker restart $(docker ps -q)
+
+    - name: Run tests 
+      run: |
+        cd ./wdio-omdb-automation
+        docker-compose run --rm wdio conf/chrome.docker.js  
