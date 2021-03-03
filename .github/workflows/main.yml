@@ -29,6 +29,7 @@ jobs:
 
     - name: check docker running containers 
       run: docker ps
+
     - name: Build App containers 
       run: docker-compose build
 
@@ -38,10 +39,10 @@ jobs:
     - name: Docker refresh containers
       run: docker restart $(docker ps -q)
 
-    - name: Run tests 
-      run: |
-        cd ./wdio-omdb-automation
-        docker-compose run --rm wdio conf/chrome.docker.js
+    #- name: Run tests 
+    #  run: |
+    #    cd ./wdio-omdb-automation
+    #    docker-compose run --rm wdio conf/chrome.docker.js
     
     - name: Authenticate into Google Cloud Platform
       uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
