@@ -27,6 +27,8 @@ jobs:
     - name: Create network 
       run: docker network create gcloud_example_pipeline
 
+    - name: check docker running containers 
+      run: docker ps
     - name: Build App containers 
       run: docker-compose build
 
