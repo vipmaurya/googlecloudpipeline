@@ -45,7 +45,7 @@ jobs:
     #    docker-compose run --rm wdio conf/chrome.docker.js
     
     - name: Authenticate into Google Cloud Platform
-      uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      uses: google-github-actions/setup-gcloud@master
       with:
         service_account_email: ${{ secrets.GCLOUD_EMAIL }}
         service_account_key: ${{ secrets.GCLOUD_KEY }}
