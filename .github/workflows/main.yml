@@ -24,8 +24,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Create network 
-      run: sudo docker network create gcloud_example_pipeline
+#     - name: Create network 
+#       run: sudo docker network create gcloud_example_pipeline
+
+    - name: Create network
+      run: sudo docker network create --driver bridge gcloud_example_pipeline || true
 
     - name: check docker running containers 
       run: sudo docker ps
