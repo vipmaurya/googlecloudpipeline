@@ -40,7 +40,7 @@ jobs:
       run: sudo docker-compose up -d
 
     - name: Docker refresh containers
-      run: sudo docker restart $(docker ps -q)
+      run: sudo docker restart $(sudo docker ps -q)
 
     #- name: Run tests 
     #  run: |
