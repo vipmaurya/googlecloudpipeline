@@ -31,16 +31,16 @@ jobs:
       run: sudo docker network create --driver bridge gcloud_example_pipeline || true
 
     - name: check docker running containers 
-      run: sudo docker ps
+      run: docker ps
 
     - name: Build App containers 
-      run: sudo docker-compose build
+      run: docker-compose build
 
     - name: Run containers 
-      run: sudo docker-compose up -d
+      run: docker-compose up -d
 
     - name: Docker refresh containers
-      run: sudo docker restart $(sudo docker ps -q)
+      run: docker restart $(sudo docker ps -q)
 
     #- name: Run tests 
     #  run: |
